@@ -1,10 +1,10 @@
 @font-face {
     font-family: Chonkly;
-    src: url("assets/font/Chonkly.otf") format("opentype");
+    src: url("../font/Chonkly.otf") format("opentype");
 }
 
 body {
-    background: url('assets/img/bg.jpg');
+    background: url('../img/bg.jpg');
     color:var(--white);
     font-family: 'Nunito';
     display: flex;
