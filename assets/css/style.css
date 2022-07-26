@@ -12,6 +12,14 @@ body {
     align-items: center;
 }
 
+#return {
+    display: block;
+    width: 100%;
+    color:var(--purple);
+    padding: 15px 30px;
+    text-align: left;
+}
+
 h1,
 h2,
 #min_max {
