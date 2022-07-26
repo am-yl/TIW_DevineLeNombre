@@ -25,9 +25,7 @@ input_attempt.addEventListener("input", function() {
 });
 
 function checkNumbers() {
-    min = parseInt(input_min.value);
-    max = parseInt(input_max.value);
-    attempt = parseInt(input_attempt.value);
+    parseInput();
     if(isNaN(min) || isNaN(max) || isNaN(attempt)) {
         document.getElementById("alert").textContent = "Toutes les valeurs doivent être renseignées !";
         btn_launch.setAttribute("disabled", "");
@@ -48,6 +46,7 @@ function checkNumbers() {
 }
 
 btn_launch.addEventListener("click", function() {
+    parseInput();
     // Faire disparaître la boîte des paramètres
     document.getElementById('audio_launch').play();
     document.getElementById('settings').style.display = 'none';
@@ -107,6 +106,12 @@ document.getElementById("btn_replay").addEventListener("click", function () {
     document.getElementById('audio_replay').play();
 });
 
+// function parse_int
+function parseInput() {
+    min = parseInt(input_min.value);
+    max = parseInt(input_max.value);
+    attempt = parseInt(input_attempt.value);
+}
 
 // fonction de fin
 function finished(result) {
