@@ -20,6 +20,10 @@ body {
     text-align: left;
 }
 
+#return:hover {
+    color:var(--light-purple);
+}
+
 h1,
 h2,
 #min_max {
