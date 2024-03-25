@@ -13,22 +13,28 @@ body {
 }
 
 header {
-    width: 100%;
+    margin-right: auto;
+    padding:15px;
 }
 
 main {
     width: 100%;
 }
 
-#return {
-    display: block;
-    margin-right: auto;
-    color:var(--purple);
-    padding: 15px 30px;
-    text-align: left;
+a {
+    text-decoration: none;
 }
 
-#return:hover {
+#return,
+#vol {
+    color:var(--purple);
+    text-align: center;
+    cursor:pointer;
+    margin: 10px;
+}
+
+#return:hover,
+#vol:hover {
     color:var(--light-purple);
 }
 
@@ -75,6 +81,10 @@ button {
     margin:auto;
     max-width: 150px;
     cursor: pointer;
+}
+
+button#disabled {
+    background-color: gray;
 }
 
 .inputBox {

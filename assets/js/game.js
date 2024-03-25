@@ -6,11 +6,31 @@ let input_attempt = document.getElementById("input_attempt");
 let btn_launch = document.getElementById("btn_launch");
 let alert = document.getElementById("alert");
 
+let vol = document.getElementById("vol");
+
 let input_play = document.getElementById("input_play");
 let btn_play = document.getElementById("btn_play");
 let message = document.getElementById("message");
 
 let attempt, min, max, nb_rand, info, play;
+
+Array.from(document.getElementsByTagName('audio')).forEach(function (audio) {
+    audio.volume=0.25;
+});
+
+vol.addEventListener("click", function() {
+    if(vol.textContent == "mute") {
+        vol.textContent = "unmute";
+        Array.from(document.getElementsByTagName('audio')).forEach(function (audio) {
+            audio.volume=0;
+        });
+    } else {
+        vol.textContent = "mute";
+        Array.from(document.getElementsByTagName('audio')).forEach(function (audio) {
+            audio.volume=0.25;
+        });
+    }
+});
 
 input_min.addEventListener("input", function() {
     checkNumbers();
