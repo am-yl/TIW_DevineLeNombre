@@ -12,9 +12,13 @@ body {
     align-items: center;
 }
 
+main {
+    width: 100%;
+}
+
 #return {
     display: block;
-    width: 100%;
+    margin-right: auto;
     color:var(--purple);
     padding: 15px 30px;
     text-align: left;
@@ -47,20 +51,38 @@ h2 {
     padding : 20px 30px;
     border-radius: 10px;
     box-shadow: 2px 2px 1px var(--light-purple);
+    margin:auto;
+    width: 10%;
+}
+
+#finished {
+    margin:auto;
+    width: fit-content;
 }
 
 button {
-    background-color: var(--purple);
     color:var(--white);
+    font-family: 'Nunito';
+    background-color: var(--purple);
     box-shadow: 2px 2px 1px var(--light-purple);
+    border:none;
+    border-radius: 5px;
+    padding:3px 8px;
     margin:auto;
     max-width: 150px;
+    cursor: pointer;
+}
+
+.inputBox {
+    margin-top: 1rem;
 }
 
 input {
     border-radius: 5px;
     color:var(--input);
-    background-color:var(--white)
+    background-color:var(--white);
+    display:block;
+    border:none;
 }
 
 #min_max {
@@ -73,14 +95,13 @@ input {
 }
 
 p {
-    padding-top:10px;
     text-align: center;
     font-style: italic;
+    text-wrap: wrap;
 }
 
 #attempt {
     text-align: right;
-    padding-top:10px;
 }
 
 .err {
@@ -93,5 +114,16 @@ audio {
 
 img {
     max-height:300px;
-    width:auto
+    width:auto;
+    margin-bottom: 3em;
 }
+
+.none {
+    display:none;
+}
+
+.flex-c {
+    display: flex;
+    flex-direction: column;
+}
+

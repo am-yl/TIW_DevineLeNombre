@@ -101,8 +101,10 @@ btn_play.addEventListener("click", function() {
 
 // rejouer
 document.getElementById("btn_replay").addEventListener("click", function () {
+    message.textContent="";
     document.getElementById('finished').style.display = 'none';
     document.getElementById('settings').style.display = 'flex';
+    document.getElementById("rep").style.display = 'block';
     document.getElementById('audio_replay').play();
 });
 
@@ -119,7 +121,7 @@ function finished(result) {
     document.getElementById('finished').style.display = 'flex';
     if(result) {
         document.getElementById("msg_fin").textContent = "Félicitations !";
-        document.getElementById("rep").textContent = "";
+        document.getElementById("rep").style.display = 'none';
         document.getElementById("img_end").src='https://c.tenor.com/_BaYDIbn3dgAAAAC/yay-up.gif';
         document.getElementById('audio_win').play();
 

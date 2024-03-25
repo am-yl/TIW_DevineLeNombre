@@ -1,93 +1,112 @@
 <html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Devine le nombre</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devine le nombre</title>
+		<link
+			rel="icon"
+			href="https://javascript.melvin-lemoine.me/assets/images/favicon.png"
+		/>
 
-    <link rel="icon" href="https://javascript.melvin-lemoine.me/assets/images/favicon.png">
+		<link
+			rel="stylesheet"
+			href="https://source.ploume.io/latest/css/ploume.min.css"
+		/>
 
-    <link rel="stylesheet" href="https://source.ploume.io/latest/css/ploume.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/assets/css/root.css" />
+		<link rel="stylesheet" href="/assets/css/style.css" />
+	</head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/root.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+	<body>
+		<a href="https://am-yl.github.io/" id="return">&larr; Retour</a>
+		<h1>Une potite partie ?</h1>
+		<main>
+			<div class="settings flex-c" id="settings">
+				<div class="inputBox flex-c">
+					<label>Le plus potit</label>
+					<input
+						id="input_min"
+						class="input"
+						type="number"
+						placeholder="Tout piti"
+					/>
+				</div>
 
-<body>
-    <a href="https://am-yl.github.io/" id="return">&larr; Retour</a>
-    <h1>Une potite partie ?</h1>
-    <main class="content-centered">
-        <div class="container content-centered">
+				<div class="inputBox flex-c">
+					<label>Le plus grand</label>
+					<input
+						id="input_max"
+						type="number"
+						placeholder="Huuuuuge"
+					/>
+				</div>
 
+				<div class="inputBox flex-c">
+					<label>Combien de chances</label>
+					<input
+						id="input_attempt"
+						type="number"
+						placeholder="Beaucoup ? Pas Beaucoup ?"
+					/>
+				</div>
 
-            <div class="settings flex-c" id="settings">
+				<p id="alert" class="err"></p>
 
-                <div class="inputBox flex-c">
-                    <label>Le plus potit</label>
-                    <input id="input_min" class="input is-bordered" type="number" placeholder="Tout piti" />
-                </div>
+				<button id="btn_launch" disabled>Okkk let's goo !</button>
+				<audio id="audio_launch">
+					<source
+						src="/assets/sons/ok-lets-goooooo.mp3"
+						type="audio/mp3"
+					/>
+				</audio>
+			</div>
 
-                <div class="inputBox flex-c mt-1">
-                    <label>Le plus grand</label>
-                    <input id="input_max" class="input is-bordered" type="number" placeholder="Huuuuuge" />
-                </div>
+			<div class="playbox flex-c" id="playbox" style="display: none">
+				<div id="min_max">
+					<p id="min"></p>
+					<p id="max"></p>
+				</div>
+				<p id="attempt"></p>
+				<div class="inputBox flex-c">
+					<label>Devines !!!!!</label>
+					<input
+						id="input_play"
+						type="number"
+						placeholder="C'est combiiiiien ?"
+					/>
+				</div>
+				<p id="message"></p>
+				<button id="btn_play">Alors ? J'ai bon ?</button>
+				<audio id="audio_play">
+					<source src="/assets/sons/klonk.mp3" type="audio/mp3" />
+				</audio>
+			</div>
 
-                <div class="inputBox flex-c mt-1">
-                    <label>Combien de chances</label>
-                    <input id="input_attempt" class="input is-bordered" type="number" placeholder="Beaucoup ? Pas Beaucoup ?" />
-                </div>
+			<div class="flex-c" id="finished" style="display: none">
+				<h2 id="msg_fin"></h2>
+				<p id="rep"></p>
+				<img src="" alt="" id="img_end" />
+				<button id="btn_replay">Rejouer</button>
+				<audio id="audio_win">
+					<source src="/assets/sons/wow_2.mp3" type="audio/mp3" />
+				</audio>
+				<audio id="audio_fail">
+					<source src="/assets/sons/fail.mp3" type="audio/mp3" />
+				</audio>
+				<audio id="audio_replay">
+					<source src="/assets/sons/again.mp3" type="audio/mp3" />
+				</audio>
+			</div>
+		</main>
+	</body>
 
-                <p id="alert" class="err"></p>
-
-                <button id="btn_launch" class="button is-bordered w-full mt-3" disabled>Okkk let's goo !</button>
-                <audio id="audio_launch">
-                    <source src="assets/sons/ok-lets-goooooo.mp3" type="audio/mp3">
-                </audio>
-
-            </div>
-
-            <div class="playbox flex-c" id="playbox" style="display: none">
-                <div id="min_max">
-                    <p id="min"></p>
-                    <p id="max"></p>
-                </div>
-                <p id="attempt"></p>
-                <div class="inputBox flex-c">
-                    <label>Devines !!!!!</label>
-                    <input id="input_play" class="input is-bordered" type="number" placeholder="C'est combiiiiien ?" />
-                </div>
-                <p id="message"></p>
-                <button id="btn_play" class="button is-bordered w-full mt-3">Alors ? J'ai bon ?</button>
-                <audio id="audio_play">
-                    <source src="assets/sons/klonk.mp3" type="audio/mp3">
-                </audio>
-            </div>
-
-            <div class="flex-c" id="finished" style="display: none;">
-                <h2 id="msg_fin"></h2>
-                <p id="rep"></p>
-                <img src="" alt="" id="img_end">
-                <audio id="audio_win">
-                    <source src="assets/sons/wow_2.mp3" type="audio/mp3">
-                </audio>
-                <audio id="audio_fail">
-                    <source src="assets/sons/fail.mp3" type="audio/mp3">
-                </audio>
-                <button id="btn_replay" class="button is-bordered w-full mt-3">Rejouer</button>
-                <audio id="audio_replay">
-                    <source src="assets/sons/again.mp3" type="audio/mp3">
-                </audio>
-            </div>
-
-        </div>
-    </main>
-</body>
-
-
-<script src="game.js"></script>
-
+	<script src="/assets/js/game.js"></script>
 </html>
